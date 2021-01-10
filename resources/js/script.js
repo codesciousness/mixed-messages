@@ -8,17 +8,17 @@ const possesives = ['one has', 'we have', 'you have'];
 const nouns = ['ability', 'liberty', 'opportunity', 'privilege'];
 const verbs = ['appreciate', 'cherish', 'embrace', 'enjoy', 'treasure'];
 
-function randomNumGenerator(num) {
-    return Math.floor(Math.random() * num);
+function randNumGen(array) {
+    return Math.floor(Math.random() * array.length);
 }
 
 const messageGenerator = () => {
-    let randomSubject = subjects[randomNumGenerator(subjects.length)];
-    let randomAdverb = adverbs[randomNumGenerator(adverbs.length)];
-    let randomAdjective = adjectives[randomNumGenerator(adjectives.length)];
-    let randomPossesive = possesives[randomNumGenerator(possesives.length)];
-    let randomNoun = nouns[randomNumGenerator(nouns.length)];
-    let randomVerb = verbs[randomNumGenerator(verbs.length)];
+    let randomSubject = subjects[randNumGen(subjects)];
+    let randomAdverb = adverbs[randNumGen(adverbs)];
+    let randomAdjective = adjectives[randNumGen(adjectives)];
+    let randomPossesive = possesives[randNumGen(possesives)];
+    let randomNoun = nouns[randNumGen(nouns)];
+    let randomVerb = verbs[randNumGen(verbs)];
     return `${randomSubject} is ${randomAdverb} ${randomAdjective} and ${randomPossesive} the ${randomNoun} to ${randomVerb} it.`
 }
 
