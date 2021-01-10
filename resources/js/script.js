@@ -8,13 +8,17 @@ const possesives = ['one has', 'we have', 'you have'];
 const nouns = ['ability', 'liberty', 'opportunity', 'privilege'];
 const verbs = ['appreciate', 'cherish', 'embrace', 'enjoy', 'treasure'];
 
+function randomNumGenerator(num) {
+    return Math.floor(Math.random() * num);
+}
+
 const messageGenerator = () => {
-    let randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
-    let randomAdverb = adverbs[Math.floor(Math.random() * adverbs.length)];
-    let randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    let randomPossesive = possesives[Math.floor(Math.random() * possesives.length)];
-    let randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
-    let randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
+    let randomSubject = subjects[randomNumGenerator(subjects.length)];
+    let randomAdverb = adverbs[randomNumGenerator(adverbs.length)];
+    let randomAdjective = adjectives[randomNumGenerator(adjectives.length)];
+    let randomPossesive = possesives[randomNumGenerator(possesives.length)];
+    let randomNoun = nouns[randomNumGenerator(nouns.length)];
+    let randomVerb = verbs[randomNumGenerator(verbs.length)];
     return `${randomSubject} is ${randomAdverb} ${randomAdjective} and ${randomPossesive} the ${randomNoun} to ${randomVerb} it.`
 }
 
